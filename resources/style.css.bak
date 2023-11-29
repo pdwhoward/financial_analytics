@@ -7,7 +7,7 @@ body {
 }
 
 body.dark-mode {
-  background-color: #13294B;
+  background-color: #53565A;
   color: white;
 }
 
@@ -124,7 +124,7 @@ a, a:hover, a:focus {
 }
 
 #sidebar.dark-mode {
-    background: #13294B;
+    background: #53565A;
 }
 
 #sidebar.active {
@@ -200,8 +200,14 @@ a, a:hover, a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #ffffff;
-    background: #56a1d3 !important;
+    color: #000;
+    background: #E7DCBA !important;
+	border-radius: 0px 15px 15px 0px;
+}
+
+#sidebar.dark-mode ul li a:hover {
+    color: #fff !important;
+    background: #E7DCBA !important;
 	border-radius: 0px 15px 15px 0px;
 }
 
@@ -225,7 +231,7 @@ a[data-toggle="collapse"] {
 }
 
 #sidebar.dark-mode ul ul a {
-	background: #13294B;
+	background: #53565A;
 	color: white;
 }
 
@@ -233,7 +239,7 @@ a[data-toggle="collapse"] {
 	font-style: italic !important;
 	font-weight: bold !important;
     color: #ffffff;
-    background: #56a1d3;
+    background: #9E7E38;
 	border-radius: 0px 15px 15px 0px;
 }
 
