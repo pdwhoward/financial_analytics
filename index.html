@@ -40,17 +40,31 @@
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #9E7E38;">
 		<div class="container-fluid">
 
-			
 			<ul class="nav navbar-left">
-			<button type="button" id="sidebarCollapse" class="btn btn-light btn-info" style="color:black;">
-				<i class="fas fa-bars" style="color:black;"></i>
-				<span style="color:black;"></span>
-			</button>
+				<button type="button" id="sidebarCollapse" class="btn btn-light btn-info" style="color:black;">
+					<i class="fas fa-bars" style="color:black;"></i>
+					<span style="color:black;"><!-- Text in button--></span>
+				</button>
 			
 				<li class="nav-item">
-					<li class="navbar-brand" style="color:white;" href="#">Quantitative Finance</li>
+					<li class="navbar-brand" style="color:white;" href="#"><!-- Text next to button--></li>
 				</li>
+
+				<div class="dropdown">
+				  <button class="btn btn-light btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Time Value of Money
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="#">Bond Valuation</a>
+					<a class="dropdown-item" href="#">Stock Valuation</a>
+					<a class="dropdown-item" href="#">NPV & WACC</a>
+					<a class="dropdown-item" href="#">Financial Statements & Free Cash Flow</a>
+					<a class="dropdown-item" href="#">DCF & Real Options</a>
+				  </div>
+				</div>
 			</ul>
+
+			<!--<li class="navbar-brand" style="color:white;" href="#">Financial Analytics</li>-->
 
   
 			<ul class="nav navbar-right">
