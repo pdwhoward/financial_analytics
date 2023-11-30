@@ -43,7 +43,11 @@
 			<button type="button" id="sidebarCollapse" class="btn btn-light btn-info" style="color:black;">
 				<i class="fas fa-bars" style="color:black;"></i>
 				<span style="color:black;">Time Value of Money</span>
-			</button>  
+			</button>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Navbar</a>
+			</nav>
+  
   
 			<ul class="nav navbar-right">
 				<!-- Comment out links
