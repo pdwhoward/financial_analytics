@@ -155,10 +155,6 @@ a, a:hover, a:focus {
 }
 
 #sidebar ul {
-	list-style: none;
-}
-
-ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -192,6 +188,8 @@ ul {
     padding-left: 15px;
 }
 
+/* Sidebar buller */
+/* ---------------------------------------------------
 #sidebar ul li a::before {
   content: "\2022";
   color: black;
@@ -203,6 +201,8 @@ ul {
   font-style: normal !important;
   transition: color 0s !important;
 }
+----------------------------------------------------- */
+
 
 #sidebar.dark-mode ul li a::before {
   color: white;
