@@ -228,6 +228,11 @@ a[data-toggle="collapse"] {
     background: #E7DCBA !important;
 }
 
+.dropdown-menu a.active {
+    color: #fff;
+    background: #fff !important;
+}
+
 
 #sidebar ul ul a {
     font-size: 0.9em !important;
