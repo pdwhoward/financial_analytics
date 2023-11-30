@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="noindex">
+
+    <title>Financial Analytics</title>
+	<link rel="icon" href="assets/favicon.png" type="image/gif">
+
+    <!-- Do not cache this page -->
+    <meta http-equiv="cache-control" content="max-age=0"/>
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+	
+	<!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    
+	<!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+    
+	<!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+	<script defer src="https://kit.fontawesome.com/ff517f81ad.js" crossorigin="anonymous"></script>
+
+    <!-- MathJax -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#toc" data-offset="70">
+
+	<!-- Navbar  -->
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #9E7E38;">
+		<div class="container-fluid">
+
+			<ul class="nav navbar-left">
+				<button type="button" id="sidebarCollapse" class="btn btn-light btn-info" style="color:black;">
+					<i class="fas fa-bars" style="color:black;"></i>
+					<span style="color:black;"><!-- Text in button--></span>
+				</button>
+			
+				<li class="nav-item">
+					<li class="navbar-brand" style="color:white;" href="#"><!-- Text next to button--></li>
+				</li>
+
+				<div class="dropdown">
+				  <button class="btn btn-light btn-info" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Time Value of Money
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="tvm.html">Time Value of Money</a>
+					<a class="dropdown-item" href="bond.html">Bond Valuation</a>
+					<a class="dropdown-item" href="stock.html">Stock Valuation</a>
+					<a class="dropdown-item" href="npv.html">NPV & WACC</a>
+					<a class="dropdown-item" href="fcf.html">Financial Statements & Free Cash Flow</a>
+					<a class="dropdown-item" href="dcf.html">DCF & Real Options</a>
+				  </div>
+				</div>
+			</ul>
+
+			<!--<li class="navbar-brand" style="color:white;" href="#">Financial Analytics</li>-->
+
+  
+			<ul class="nav navbar-right">
+				<!-- Comment out links
+				<li class="nav-item">
+					<a class="nav-link"style="color:white;" href="https://2nc.onlinemba.unc.edu/login" target="_blank"><i class="fas fa-graduation-cap"></i>2NC</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" style="color:white;" href="https://www.dropbox.com/sh/77r7enbbxihsilq/AABYbD8WVUMtykGlUIEHKb6_a" target="_blank"><i class="fab fa-dropbox"></i>Dropbox</a>
+				</li>
+				<li class="nav-item">
+				
+					<a class="nav-link" style="color:white;" href="assets/MBA@772.pdf" target="_blank"><i class="far fa-file-pdf"></i>Download</a>
+				</li>
+				-->
+				<li class="nav-item">
+					<a class="nav-link" style="color:white;" href="javascript:myFunction();"><i class="fas fa-lightbulb" id="lb"></i></a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <ul class="list-group" id="toc">
+				<ul>
+<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+<li><a href="#discounting-single-cash-flows"
+id="toc-discounting-single-cash-flows">Discounting Single Cash Flows</a>
+<ul>
+<li><a href="#present-future-values"
+id="toc-present-future-values">Present &amp; Future Values</a>
+<ul>
+<li><a href="#present-value-of-annuity-with-growth"
+id="toc-present-value-of-annuity-with-growth">Present value of annuity
+with growth</a></li>
+</ul></li>
+<li><a href="#apr-ear-converting-rates"
+id="toc-apr-ear-converting-rates">APR, EAR &amp; Converting
+Rates</a></li>
+<li><a href="#valuation" id="toc-valuation">Valuation</a></li>
+<li><a href="#excel-formulas" id="toc-excel-formulas">Excel
+Formulas</a></li>
+</ul></li>
+<li><a href="#discounting-multiple-cash-flows"
+id="toc-discounting-multiple-cash-flows">Discounting Multiple Cash
+Flows</a>
+<ul>
+<li><a href="#annuity" id="toc-annuity">Annuity</a></li>
+<li><a href="#perpetuity" id="toc-perpetuity">Perpetuity</a></li>
+<li><a href="#irregular-stream-of-cash-flows"
+id="toc-irregular-stream-of-cash-flows">Irregular Stream of Cash
+Flows</a></li>
+</ul></li>
+<li><a href="#excel-tvm-functions" id="toc-excel-tvm-functions">Excel
+TVM Functions</a>
+<ul>
+<li><a href="#cash-flows" id="toc-cash-flows">Cash flows</a></li>
+<li><a href="#discount-rate" id="toc-discount-rate">Discount
+rate</a></li>
+<li><a href="#price" id="toc-price">Price</a></li>
+<li><a href="#constant-growth-model"
+id="toc-constant-growth-model">Constant Growth Model</a></li>
+<li><a href="#differential-growth-model"
+id="toc-differential-growth-model">Differential Growth Model</a></li>
+</ul></li>
+<li><a href="#intrest-rates" id="toc-intrest-rates">Intrest Rates</a>
+<ul>
+<li><a href="#center" id="toc-center">Center</a></li>
+<li><a href="#dispersion" id="toc-dispersion">Dispersion</a></li>
+<li><a href="#comovement" id="toc-comovement">Comovement</a></li>
+<li><a href="#test" id="toc-test">Test</a></li>
+<li><a href="#test-1" id="toc-test-1">Test</a></li>
+<li><a href="#test-2" id="toc-test-2">Test</a></li>
+<li><a href="#test-3" id="toc-test-3">Test</a></li>
+<li><a href="#test-4" id="toc-test-4">Test</a></li>
+<li><a href="#test-5" id="toc-test-5">Test</a></li>
+<li><a href="#test-6" id="toc-test-6">Test</a></li>
+<li><a href="#test-7" id="toc-test-7">Test</a></li>
+<li><a href="#test-8" id="toc-test-8">Test</a></li>
+<li><a href="#test-9" id="toc-test-9">Test</a></li>
+<li><a href="#test-10" id="toc-test-10">Test</a></li>
+<li><a href="#test-11" id="toc-test-11">Test</a></li>
+<li><a href="#test-12" id="toc-test-12">Test</a></li>
+<li><a href="#test-13" id="toc-test-13">Test</a></li>
+<li><a href="#test-14" id="toc-test-14">Test</a></li>
+<li><a href="#test-15" id="toc-test-15">Test</a></li>
+<li><a href="#test-16" id="toc-test-16">Test</a></li>
+<li><a href="#test-17" id="toc-test-17">Test</a></li>
+<li><a href="#test-18" id="toc-test-18">Test</a></li>
+<li><a href="#test-19" id="toc-test-19">Test</a></li>
+<li><a href="#test-20" id="toc-test-20">Test</a></li>
+<li><a href="#test-21" id="toc-test-21">Test</a></li>
+<li><a href="#test-22" id="toc-test-22">Test</a></li>
+</ul></li>
+<li><a href="#conclusion" id="toc-conclusion">Conclusion</a>
+<ul>
+<li><a href="#capm" id="toc-capm">CAPM</a></li>
+<li><a href="#securitys-beta" id="toc-securitys-beta">Security’s <span
+class="math inline">\(\beta\)</span></a></li>
+<li><a href="#capital-market-line" id="toc-capital-market-line">Capital
+Market Line</a></li>
+<li><a href="#security-market-line"
+id="toc-security-market-line">Security Market Line</a></li>
+</ul></li>
+</ul>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+			<h1 id="introduction">Introduction</h1>
+<p>In this module, we will learn about the time value of money. This
+will be our main tool for analysis throughout our course. Broadly, we
+want to be able to compare the value of money across different time
+periods, e.g. the value of $100 today vs next year. To do this, we will
+will use an interest rate <span class="math inline">\(r\)</span>. This
+rate will be called different names depending on the context. Some
+examples are the opportunity cost, investment return, yield to maturity,
+and cost of equity. We will generically call <span
+class="math inline">\(r\)</span> a discount rate throughout this course,
+since it will allow us to discount or move cash flows from one time
+period to another. Let’s start with a simple example in the following
+video.</p>
+<div style="padding: 56.25% 0 0 0; position:relative;">
+<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="Introduction" src="https://player.vimeo.com/video/824871474?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" data-mce-fragment="1" frameBorder="0">
+</iframe>
+</div>
+<h1 id="discounting-single-cash-flows">Discounting Single Cash
+Flows</h1>
+<h2 id="present-future-values">Present &amp; Future Values</h2>
+<p>Present value of future cash flow at time <span
+class="math inline">\(t\)</span></p>
+<p><span class="math display">\[PV_{0} = \frac{FV_{t}}{\left( 1 + r
+\right)^{t}}\]</span></p>
+<h3 id="present-value-of-annuity-with-growth">Present value of annuity
+with growth</h3>
+<p><span class="math display">\[\begin{aligned}
+PV_{0} &amp;= \text{PM}T_{1} \times \text{ADF}\left( t,r,g \right) \\
+\text{ADF}\left( t,r,g \right) &amp;= \left\lbrack \frac{1 - \left(
+\frac{1 + g}{1 + r} \right)^{t}}{r - g} \right\rbrack \\
+\end{aligned}\]</span></p>
+<p>Future value of annuity with growth</p>
+<p><span class="math display">\[\begin{aligned}
+FV_{t} &amp;= \text{PM}T_{1} \times \text{ACF}\left( t,r,g \right) \\
+\text{ACF}\left( t,r,g \right) &amp;= \left\lbrack \frac{\left( 1 + r
+\right)^{t} - \left( 1 + g \right)^{t}}{r - g} \right\rbrack \\
+\end{aligned}\]</span></p>
+<p>Present value of perpetuity with growth</p>
+<p><span class="math display">\[PV_{0} = \frac{\text{PM}T_{1}}{r -
+g}\]</span></p>
+<h2 id="apr-ear-converting-rates">APR, EAR &amp; Converting Rates</h2>
+<p>The stated annual rate (also known as the APR) is the rate that is
+stated. It is a fake rate because it does not include the effects of
+compounding interest. It must be converted to a true rate. The APR is
+written as ____% per year compounded _____. You can only divide the APR
+by the compounding frequency (semi-annual, quarterly, weekly, etc.).</p>
+<p>The Effective Annual Yield (EAR) is a true rate and includes the
+effects of compounding interest. You can NOT divide EAR by 2, 4, 12 to
+get the semi-annual, quarterly, monthly rate.</p>
+<p>If your cash flows are at a different frequency then the compounding
+frequency, then you need to calculate the EAR and then convert the EAR
+into the rate that aligns with the frequency that match the cash
+flows.</p>
+<p>Example:</p>
+<p>Your bank offers you a loan of $100 at an annual rate of 12%,
+compounded monthly. How much interest would you pay in one year?</p>
+<p>Note that the stated rate is 12%. This is our fake rate,
+i.e. APR=12%.</p>
+<p>Since the compounded frequency is monthly, we must calculate the true
+monthly rate. Our generic formulas are:</p>
+<p><span class="math display">\[\begin{aligned}
+1 + APR = 1 + monthly\ rate \times 12 \\
+1 + EAR = \left( 1 + monthly\ rate \right)^{12} \\
+\end{aligned}\]</span></p>
+<p>Using the APR formula, we have</p>
+<p><span class="math display">\[monthly\ rate = \frac{\text{APR}}{12} =
+\frac{12\%}{12} = 1\%\]</span></p>
+<p>The monthly rate of 1% is a true rate that incorporates compounding
+of interest. We could calculate the interest paid over the course of a
+year (i.e. over the next 12 1-month periods) as</p>
+<p><span class="math display">\[\$ 100 \times \left( 1 + 1\%
+\right)^{12} = \$ 112.68\]</span></p>
+<p>and we see that we would pay $12.68 in interest over the course of a
+year. We could also calculate the EAR using the EAR formula</p>
+<p><span class="math display">\[EAR = \left( 1 + monthly\ rate
+\right)^{12} - 1 = \left( 1 + 1\% \right)^{12} - 1 =
+12.68\%\]</span></p>
+<p>We could also calculate the interest paid over the course of a year
+as</p>
+<p><span class="math display">\[\$ 100 \times \left( 1 + 12.68\%
+\right)^{1} = \$ 112.68\]</span></p>
+<p>We see that the interest is again $12.68. We see that the monthly
+rate and EAR both take into compounding of interest.</p>
+<h2 id="valuation">Valuation</h2>
+<p>Price any asset by discounting its expected future cash flows back at
+an appropriate, risk adjusted discounted rate</p>
+<p><span class="math display">\[Price = \sum_{t =
+0}^{\infty}\frac{CF_{t}}{\left( 1 + r \right)^{t}}\]</span></p>
+<h2 id="excel-formulas">Excel Formulas</h2>
+<p><span class="math display">\[
+\begin{aligned}
+PV &amp;= CF_{0} + NPV\left( r,CF_{t} \right) \\
+PV &amp;= PV\left( r,n,PMT,FV \right) \\
+FV &amp;= FV\left( r,n,PMT,PV \right) \\
+PMT &amp;= PMT\left( r,n,PV,FV \right) \\
+r &amp;= IRR\left( \text{CF} \right) \\
+r &amp;= RATE\left( n,PMT,PV \right) \\
+\end{aligned}
+\]</span></p>
+<h1 id="discounting-multiple-cash-flows">Discounting Multiple Cash
+Flows</h1>
+<h2 id="annuity">Annuity</h2>
+<h2 id="perpetuity">Perpetuity</h2>
+<h2 id="irregular-stream-of-cash-flows">Irregular Stream of Cash
+Flows</h2>
+<h1 id="excel-tvm-functions">Excel TVM Functions</h1>
+<h2 id="cash-flows">Cash flows</h2>
+<ul>
+<li><p>Dividends</p>
+<ul>
+<li><p>Payments over time</p></li>
+<li><p>Can be irregular</p></li>
+</ul></li>
+<li><p>Future stock price if sell stock</p>
+<ul>
+<li>Known as capital gains</li>
+</ul></li>
+</ul>
+<h2 id="discount-rate">Discount rate</h2>
+<ul>
+<li><p>Cost of equity (sometimes denote <span
+class="math inline">\(k_{e}\)</span>)</p></li>
+<li><p>Can decompose total return = capital gains + dividend
+yield</p></li>
+<li><p><span class="math inline">\(r = g +
+\frac{D_{1}}{P_{0}}\)</span></p></li>
+</ul>
+<h2 id="price">Price</h2>
+<p>Ex-dividend price is the present value today of future dividends paid
+at time 1, 2, 3, …</p>
+<p><span class="math display">\[\begin{aligned}
+Price &amp;= PV\left( \text{Cash Flows} \right) \\
+&amp;= PV\left( D_{1},D_{2},D_{3},\ldots \right) \\
+&amp;= \frac{D_{1}}{\left( 1 + r \right)^{1}} + \frac{D_{2}}{\left( 1 +
+r \right)^{2}} + \frac{D_{3}}{\left( 1 + r \right)^{3}} + \cdots \\
+\end{aligned}\]</span></p>
+<p>Note that we cannot write down the infinite summation, so we must
+make assumptions about the dividends to use our perpetuity formulas</p>
+<h2 id="constant-growth-model">Constant Growth Model</h2>
+<ul>
+<li><p>Assume dividends grow at a constant rate of <span
+class="math inline">\(g\)</span></p></li>
+<li><p><span class="math inline">\(D_{t + 1} = D_{t} \times \left( 1 + g
+\right)\)</span></p></li>
+<li><p>Note the timing difference in our formula (price today, dividend
+tomorrow)</p></li>
+</ul>
+<p><span class="math display">\[P_{0} = \frac{D_{1}}{r - g}\]</span></p>
+<h2 id="differential-growth-model">Differential Growth Model</h2>
+<ul>
+<li><p>Assume short run dividends followed by long run dividends
+following constant growth</p></li>
+<li><p>To value stock, we need to:</p>
+<ol type="1">
+<li><p>Estimate future dividends in the foreseeable future</p></li>
+<li><p>Estimate the future stock price when the stock becomes a constant
+growth stock</p></li>
+</ol></li>
+</ul>
+<p>Compute the total present value of the estimated future dividends and
+future stock price at the appropriate discount rate<br />
+</p>
+<h1 id="intrest-rates">Intrest Rates</h1>
+<h2 id="center">Center</h2>
+<ul>
+<li><p>Mean, average and expected return are synonymous in this
+section</p></li>
+<li><p>Expected Return of an Asset</p></li>
+</ul>
+<p><span class="math display">\[E\left\lbrack R \right\rbrack = \sum_{j
+= 1}^{s}{\text{Pro}b_{j} \times R_{j}}\]</span></p>
+<ul>
+<li>Expected Return Portfolio</li>
+</ul>
+<p><span class="math display">\[E\left\lbrack R_{P} \right\rbrack =
+\sum_{i = 1}^{n}{w_{i} \times E\left\lbrack R_{i}
+\right\rbrack}\]</span></p>
+<h2 id="dispersion">Dispersion</h2>
+<ul>
+<li>Variance of an Asset</li>
+</ul>
+<p><span class="math display">\[\text{Var}\left( R \right) = \sigma^{2}
+= \sum_{j = 1}^{s}{\text{Pro}b_{j} \times \left( R_{j} - E\left\lbrack R
+\right\rbrack \right)^{2}}\]</span></p>
+<ul>
+<li>Variance of a Portfolio of Two Assets</li>
+</ul>
+<p><span class="math display">\[\sigma_{P}^{2} = w_{1}^{2} \cdot
+\sigma_{1}^{2} + w_{2}^{2} \cdot \sigma_{2}^{2} + 2 \cdot w_{1} \cdot
+w_{2} \cdot \sigma_{1,2}\]</span></p>
+<ul>
+<li>Standard Deviation</li>
+</ul>
+<p><span class="math display">\[\text{SD}\left( R \right) = \sigma =
+\sqrt{\text{Var}\left( R \right)} = \sqrt{\sigma^{2}}\]</span></p>
+<h2 id="comovement">Comovement</h2>
+<ul>
+<li>Covariance</li>
+</ul>
+<p><span class="math display">\[\text{Cov}\left( R_{1},R_{2} \right) =
+\sigma_{1,2} = \sum_{j = 1}^{s}{\text{Pro}b_{j} \times \left( R_{1,j} -
+E\left\lbrack R_{1} \right\rbrack \right) \times \left( R_{2,j} -
+E\left\lbrack R_{2} \right\rbrack \right)}\]</span></p>
+<ul>
+<li><p>Correlation</p>
+<ul>
+<li>Bounded between -1 and 1</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[\text{Corr}\left( R_{1},R_{2} \right) =
+\rho_{1,2} = \frac{\sigma_{1,2}}{\sigma_{1}\sigma_{2}}\]</span></p>
+<h2 id="test">Test</h2>
+<h2 id="test-1">Test</h2>
+<h2 id="test-2">Test</h2>
+<h2 id="test-3">Test</h2>
+<h2 id="test-4">Test</h2>
+<h2 id="test-5">Test</h2>
+<h2 id="test-6">Test</h2>
+<h2 id="test-7">Test</h2>
+<h2 id="test-8">Test</h2>
+<h2 id="test-9">Test</h2>
+<h2 id="test-10">Test</h2>
+<h2 id="test-11">Test</h2>
+<h2 id="test-12">Test</h2>
+<h2 id="test-13">Test</h2>
+<h2 id="test-14">Test</h2>
+<h2 id="test-15">Test</h2>
+<h2 id="test-16">Test</h2>
+<h2 id="test-17">Test</h2>
+<h2 id="test-18">Test</h2>
+<h2 id="test-19">Test</h2>
+<h2 id="test-20">Test</h2>
+<h2 id="test-21">Test</h2>
+<h2 id="test-22">Test</h2>
+
+<h1 id="conclusion">Conclusion</h1>
+<h2 id="capm">CAPM</h2>
+<p><span class="math inline">\(R_{i} = R_{f} + \beta_{i} \times \left(
+R_{M} - R_{f} \right)\)</span></p>
+<ul>
+<li><p>Required return for asset <span class="math inline">\(i\)</span>:
+<span class="math inline">\(R_{i}\)</span></p></li>
+<li><p>Risk-free asset: <span
+class="math inline">\(R_{f}\)</span></p></li>
+<li><p>Asset <span class="math inline">\(i\)</span>’s beta: <span
+class="math inline">\(\beta_{i}\)</span></p></li>
+<li><p>Risk Premium: <span class="math inline">\(R_{M} -
+R_{f}\)</span></p></li>
+</ul>
+<h2 id="securitys-beta">Security’s <span
+class="math inline">\(\beta\)</span></h2>
+<p><span class="math display">\[\beta_{i} = \frac{\text{Cov}\left(
+R_{i},R_{M} \right)}{\text{Var}\left( R_{M} \right)} =
+\frac{\sigma_{\text{iM}}}{\sigma_{M}^{2}} =
+\frac{\sigma_{i}\sigma_{M}\rho_{\text{iM}}}{\sigma_{M}^{2}} =
+\frac{\sigma_{i}}{\sigma_{M}}\rho_{\text{iM}}\]</span></p>
+<p>If efficient portfolio (i.e. on CML), then <span
+class="math inline">\(\rho_{\text{iM}} = 1\)</span> and hence</p>
+<p><span class="math display">\[\beta_{i} =
+\frac{\sigma_{i}}{\sigma_{M}}\rho_{\text{iM}} =
+\frac{\sigma_{i}}{\sigma_{M}}\]</span></p>
+<p>Portfolio <span class="math inline">\(\beta_{P}\)</span></p>
+<p><span class="math display">\[\beta_{P} = \sum_{i = 1}^{n}{w_{i}
+\times \beta_{i}}\]</span></p>
+<h2 id="capital-market-line">Capital Market Line</h2>
+<p>CML: Plot <span class="math inline">\(R\)</span> vs <span
+class="math inline">\(\sigma\)</span></p>
+<ul>
+<li><p>Slope: Sharpe <span class="math inline">\(\frac{R_{M} -
+R_{f}}{\sigma_{M}}\)</span></p></li>
+<li><p>An efficient portfolio falls on the CML and hence</p></li>
+</ul>
+<p><span class="math display">\[\begin{aligned}
+R_{i} &amp;= R_{f} + \beta_{i} \times \left( R_{M} - R_{f} \right) \\
+&amp;= R_{f} + \frac{\sigma_{i}}{\sigma_{M}} \times \left( R_{M} - R_{f}
+\right) \\
+&amp;= R_{f} + \sigma_{i} \times \frac{R_{M} - R_{f}}{\sigma_{M}} \\
+\end{aligned}
+\]</span></p>
+<h2 id="security-market-line">Security Market Line</h2>
+<p>SML: Plot <span class="math inline">\(R\)</span> vs <span
+class="math inline">\(\beta\)</span></p>
+<ul>
+<li><p>Slope: <span class="math inline">\(RP_{M} = R_{M} -
+R_{f}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{aligned} R_{i} &amp;= R_{f} +
+\beta_{i} \times \left( R_{M} - R_{f} \right) \\
+\end{aligned}\)</span></p></li>
+</ul>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({theme:"dark",alwaysShowScrollbar:"1"});
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+	<script>
+		$(document).ready(function() {
+			$("a").on("click", function() {
+				if ( !($("a").classList.contains("active")) ) {
+					$("a.active").removeClass("active");
+					$(this).addClass("active");
+				}
+			});
+		});
+	</script>
+	<script>
+		// document ready
+		(function ($) {
+
+		var previousScroll = 30;
+			// scroll functions
+			$(window).scroll(function(e) {
+			
+				// add/remove class to navbar when scrolling to hide/show
+				var scroll = $(window).scrollTop();
+				if (scroll >= previousScroll) {
+					$('.navbar').addClass("navbar-hide");
+				
+				}else if (scroll < previousScroll) {
+					$('.navbar').removeClass("navbar-hide");
+				}
+				previousScroll = scroll;
+			
+			});
+			
+		})(jQuery);
+	</script>
+	<script>
+		$('#sidebar ul').addClass('list-group border-0')
+		$('#sidebar ul li a').addClass('list-group-item border-0')
+		$('table').addClass('table')
+	</script>
+	<script>
+		function myFunction() {
+			var element = document.getElementById("sidebar");
+			element.classList.toggle("dark-mode");
+
+			var element = document.body;
+			element.classList.toggle("dark-mode");
+
+			$("#lb").toggleClass("fas far");
+		}
+	</script>
+
+</body>
+</html>
