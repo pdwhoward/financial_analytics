@@ -154,6 +154,10 @@ a, a:hover, a:focus {
     padding: 0px;
 }
 
+#sidebar ul {
+	list-style: none;
+}
+
 /* Original ---------------------------------------------------
 #sidebar ul li a {
     padding: 0px;
