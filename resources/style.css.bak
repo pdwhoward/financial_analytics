@@ -158,26 +158,10 @@ a, a:hover, a:focus {
 	list-style: none;
 }
 
-#sidebar ul li a {
-    padding: 0px;
-    font-size: 1.1em;
-	margin-left: 0px;
-}
-
-#sidebar ul ul a {
-    font-size: 1em !important;
-    padding-left: 50px !important;
-	color: #000000;
-	white-space: nowrap
-}
-
-
-#sidebar ul li a + ul {
-  display: none;
-}
-
-#sidebar ul li a.active + ul {
-  display: block;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Original ---------------------------------------------------
