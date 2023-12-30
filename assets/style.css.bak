@@ -77,11 +77,11 @@ a, a:hover, a:focus {
 }
 
 label {
-    color: #black !important;
+    color: black !important;
 }
 
 label.dark-mode {
-    background: #black;
+    background: black;
 }
 
 .fas {

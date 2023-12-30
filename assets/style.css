@@ -81,7 +81,7 @@ label {
 }
 
 label.dark-mode {
-    background: black;
+    background: black !important;;
 }
 
 .fas {
