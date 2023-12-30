@@ -76,6 +76,14 @@ a, a:hover, a:focus {
 	color: black;
 }
 
+label {
+    cursor: pointer;
+    color: #555;
+    display: block;
+    padding: 10px;
+    margin: 3px;
+}
+
 .fas {
 	text-indent: 0em;
 }
@@ -87,7 +95,7 @@ a, a:hover, a:focus {
   width: 100%;
 }
 
-.btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
+.btn-secondary, .btn-secondary:active, .btn-secondary:visited {
     background-color: #9E7E38 !important;
 	color: white !important;
 }

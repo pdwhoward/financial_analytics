@@ -76,6 +76,10 @@ a, a:hover, a:focus {
 	color: black;
 }
 
+label {
+    color: #555;
+}
+
 .fas {
 	text-indent: 0em;
 }
