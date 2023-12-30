@@ -77,7 +77,7 @@ a, a:hover, a:focus {
 }
 
 label {
-    color: #555;
+    color: #black !important;
 }
 
 .fas {
