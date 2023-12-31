@@ -80,10 +80,6 @@ label {
     color: black !important;
 }
 
-label.dark-mode {
-    background: black !important;;
-}
-
 .fas {
 	text-indent: 0em;
 }
@@ -114,6 +110,10 @@ label.dark-mode {
   color: #0000EE !important;
 }
 */
+
+#content a {
+  color: #0000EE !important;
+}
 
 /* ---------------------------------------------------
     Vimeo

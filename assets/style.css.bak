@@ -80,10 +80,6 @@ label {
     color: black !important;
 }
 
-label.dark-mode {
-    background: black;
-}
-
 .fas {
 	text-indent: 0em;
 }
