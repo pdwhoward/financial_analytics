@@ -101,6 +101,13 @@ label {
 	color: black !important;
 }
 
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
 /* ---------------------------------------------------
     Other
 ----------------------------------------------------- */
