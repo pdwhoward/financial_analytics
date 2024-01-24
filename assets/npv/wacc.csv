@@ -1,97 +1,97 @@
 Industry,Debt Weight,Cost of Capital
-Advertising,25.24,8.63
-Aerospace/Defense,20.29,7.81
-Air Transport,61.85,6.06
-Apparel,32.78,7.55
-Auto & Truck,23.68,9.26
-Auto Parts,27.77,8.33
-Bank (Money Center),68.37,5.08
-Banks (Regional),50.48,4.68
-Beverage (Alcoholic),19.66,8.05
-Beverage (Soft),14.62,6.87
-Broadcasting,63.82,5.60
-Brokerage & Investment Banking,69.33,5.41
-Building Materials,15.36,9.00
-Business & Consumer Services,15.21,7.86
-Cable TV,50.43,6.76
-Chemical (Basic),31.35,7.32
-Chemical (Diversified),41.01,6.93
-Chemical (Specialty),21.15,7.81
-Coal & Related Energy,18.40,8.67
-Computer Services,22.57,7.42
-Computers/Peripherals,5.74,8.79
-Construction Supplies,13.98,7.58
-Diversified,16.07,8.51
-Drugs (Biotechnology),14.08,8.34
-Drugs (Pharmaceutical),13.83,8.05
-Education,16.38,8.58
-Electrical Equipment,17.62,8.61
-Electronics (Consumer & Office),15.49,8.90
-Electronics (General),14.67,7.54
-Engineering/Construction,21.10,7.71
-Entertainment,22.33,7.46
-Environmental & Waste Services,18.00,7.29
-Farming/Agriculture,31.18,7.06
-Financial Svcs. (Non-bank & Insurance),77.42,5.01
-Food Processing,26.89,6.24
-Food Wholesalers,30.86,6.93
-Furn/Home Furnishings,32.23,7.31
-Green & Renewable Energy,58.58,6.07
-Healthcare Products,11.24,8.23
-Healthcare Support Services,21.18,7.61
-Heathcare Information and Technology,13.85,8.95
-Homebuilding,14.10,9.28
-Hospitals/Healthcare Facilities,44.37,6.10
-Hotel/Gaming,32.74,8.02
-Household Products,12.89,7.00
-Information Services,26.29,7.02
-Insurance (General),20.59,7.64
-Insurance (Life),47.98,5.68
-Insurance (Prop/Cas.),16.24,6.72
-Investments & Asset Management,28.74,5.23
-Machinery,14.43,7.91
-Metals & Mining,13.66,7.72
-Office Equipment & Services,34.46,7.29
-Oil/Gas (Integrated),11.11,6.61
-Oil/Gas (Production and Exploration),18.88,7.34
-Oil/Gas Distribution,41.25,5.99
-Oilfield Svcs/Equip.,24.32,7.27
-Packaging & Container,41.68,6.00
-Paper/Forest Products,27.20,10.35
-Power,48.17,5.19
-Precious Metals,13.20,7.37
-Publishing & Newspapers,22.32,7.15
-R.E.I.T.,44.37,6.28
-Real Estate (Development),48.48,5.43
-Real Estate (General/Diversified),24.17,5.83
-Real Estate (Operations & Services),30.83,7.30
-Recreation,36.94,7.25
-Reinsurance,29.84,5.84
-Restaurant/Dining,20.46,8.24
-Retail (Automotive),36.51,8.22
-Retail (Building Supply),16.61,11.30
-Retail (Distributors),24.41,7.71
-Retail (General),11.84,8.93
-Retail (Grocery and Food),35.83,5.31
-Retail (REITs),37.04,6.94
-Retail (Special Lines),26.55,7.85
-Rubber& Tires,70.17,4.76
-Semiconductor,5.70,10.36
-Semiconductor Equip,7.22,10.40
-Shipbuilding & Marine,22.94,6.74
-Shoe,8.01,9.34
-Software (Entertainment),3.06,8.83
-Software (Internet),10.70,10.59
-Software (System & Application),5.84,9.49
-Steel,16.79,8.18
-Telecom (Wireless),39.08,6.98
-Telecom. Equipment,10.25,8.33
-Telecom. Services,55.54,5.56
-Tobacco,25.87,8.03
-Transportation,23.57,7.42
-Transportation (Railroads),21.14,7.46
-Trucking,16.63,8.27
-Utility (General),45.90,5.09
-Utility (Water),33.73,6.03
-Total Market,31.70,7.00
-Total Market (without financials),18.37,7.99
+Retail (Building Supply),17,11.3
+Software (Internet),11,10.6
+Semiconductor Equip,7,10.4
+Semiconductor,6,10.4
+Paper/Forest Products,27,10.4
+Software (System & Application),6,9.5
+Shoe,8,9.3
+Homebuilding,14,9.3
+Auto & Truck,24,9.3
+Building Materials,15,9.0
+Heathcare Information and Technology,14,9.0
+Retail (General),12,8.9
+Electronics (Consumer & Office),15,8.9
+Software (Entertainment),3,8.8
+Computers/Peripherals,6,8.8
+Coal & Related Energy,18,8.7
+Advertising,25,8.6
+Electrical Equipment,18,8.6
+Education,16,8.6
+Diversified,16,8.5
+Drugs (Biotechnology),14,8.3
+Auto Parts,28,8.3
+Telecom. Equipment,10,8.3
+Trucking,17,8.3
+Restaurant/Dining,20,8.2
+Healthcare Products,11,8.2
+Retail (Automotive),37,8.2
+Steel,17,8.2
+Beverage (Alcoholic),20,8.1
+Drugs (Pharmaceutical),14,8.1
+Tobacco,26,8.0
+Hotel/Gaming,33,8.0
+Total Market (without financials),18,8.0
+Machinery,14,7.9
+Business & Consumer Services,15,7.9
+Retail (Special Lines),27,7.9
+Aerospace/Defense,20,7.8
+Chemical (Specialty),21,7.8
+Metals & Mining,14,7.7
+Engineering/Construction,21,7.7
+Retail (Distributors),24,7.7
+Insurance (General),21,7.6
+Healthcare Support Services,21,7.6
+Construction Supplies,14,7.6
+Apparel,33,7.6
+Electronics (General),15,7.5
+Entertainment,22,7.5
+Transportation (Railroads),21,7.5
+Computer Services,23,7.4
+Transportation,24,7.4
+Precious Metals,13,7.4
+Oil/Gas (Production and Exploration),19,7.3
+Chemical (Basic),31,7.3
+Furn/Home Furnishings,32,7.3
+Real Estate (Operations & Services),31,7.3
+Environmental & Waste Services,18,7.3
+Office Equipment & Services,34,7.3
+Oilfield Svcs/Equip.,24,7.3
+Recreation,37,7.3
+Publishing & Newspapers,22,7.2
+Farming/Agriculture,31,7.1
+Information Services,26,7.0
+Household Products,13,7.0
+Total Market,32,7.0
+Telecom (Wireless),39,7.0
+Retail (REITs),37,6.9
+Chemical (Diversified),41,6.9
+Food Wholesalers,31,6.9
+Beverage (Soft),15,6.9
+Cable TV,50,6.8
+Shipbuilding & Marine,23,6.7
+Insurance (Prop/Cas.),16,6.7
+Oil/Gas (Integrated),11,6.6
+R.E.I.T.,44,6.3
+Food Processing,27,6.2
+Hospitals/Healthcare Facilities,44,6.1
+Green & Renewable Energy,59,6.1
+Air Transport,62,6.1
+Utility (Water),34,6.0
+Packaging & Container,42,6.0
+Oil/Gas Distribution,41,6.0
+Reinsurance,30,5.8
+Real Estate (General/Diversified),24,5.8
+Insurance (Life),48,5.7
+Broadcasting,64,5.6
+Telecom. Services,56,5.6
+Real Estate (Development),48,5.4
+Brokerage & Investment Banking,69,5.4
+Retail (Grocery and Food),36,5.3
+Investments & Asset Management,29,5.2
+Power,48,5.2
+Utility (General),46,5.1
+Bank (Money Center),68,5.1
+Financial Svcs. (Non-bank & Insurance),77,5.0
+Rubber& Tires,70,4.8
+Banks (Regional),50,4.7
