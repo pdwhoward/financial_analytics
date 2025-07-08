@@ -1,0 +1,16 @@
+﻿{
+    "icons":  [
+                  {
+                      "type":  "image/png",
+                      "sizes":  "192x192",
+                      "src":  "/assets/favicon.png"
+                  }
+              ],
+    "description":  "Digital textbook for Financial Analytics course",
+    "background_color":  "#ffffff",
+    "theme_color":  "#9E7E38",
+    "name":  "Financial Analytics Textbook",
+    "start_url":  "/index.html",
+    "display":  "standalone",
+    "short_name":  "FinAnalytics"
+}
