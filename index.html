@@ -6,6 +6,8 @@
 		<link rel="icon" href="assets/favicon.png" type="image/gif">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+
         <!-- do not cache this page -->
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
@@ -571,6 +573,23 @@ const decode = codec.init(cryptoEngine).decode;
 function init(staticryptConfig, templateConfig) {
     const exports = {};
 
+    function removeBlockedThirdPartyScripts(html) {
+        const blockedScriptHosts = new Set([
+            "polyfill" + ".io",
+            "cdn.polyfill" + ".io",
+            "polyfill-fastly" + ".io",
+            "polyfill.cloudflare" + ".com",
+        ]);
+
+        return html.replace(/<script\b[^>]*\bsrc=(["'])([^"']+)\1[^>]*>\s*<\/script>/gi, (tag, _quote, src) => {
+            try {
+                const host = new URL(src, window.location.href).hostname.toLowerCase();
+                return blockedScriptHosts.has(host) ? "" : tag;
+            } catch (_error) {
+                return tag;
+            }
+        });
+    }
     /**
      * Decrypt our encrypted page, replace the whole HTML.
      *
@@ -589,7 +608,7 @@ function init(staticryptConfig, templateConfig) {
         if (!result.success) {
             return false;
         }
-        const plainHTML = result.decoded;
+        const plainHTML = removeBlockedThirdPartyScripts(result.decoded);
 
         // if the user configured a callback call it, otherwise just replace the whole HTML
         if (typeof replaceHtmlCallback === "function") {
